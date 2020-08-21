@@ -12,7 +12,7 @@ const SongList = ({ data, mutate }) => {
     return data.songs.map(({ id, title }) => {
       return (
         <li key={id} className='collection-item'>
-          {title}
+          <Link to={`/song/${id}`}>{title}</Link>
           <i className='material-icons right' onClick={() => deleteSong(id)}>
             delete
           </i>
