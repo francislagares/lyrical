@@ -17,6 +17,7 @@ export const querySong = gql`
       lyrics {
         id
         content
+        likes
       }
     }
   }
@@ -46,8 +47,19 @@ export const mutationAddLyric = gql`
       id
       title
       lyrics {
+        id
         content
+        likes
       }
+    }
+  }
+`;
+
+export const mutationLikeLyric = gql`
+  mutation LikeLyric($id: ID) {
+    likeLyric(id: $id) {
+      id
+      likes
     }
   }
 `;
