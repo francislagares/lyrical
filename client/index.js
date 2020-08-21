@@ -6,6 +6,7 @@ import { ApolloProvider } from 'react-apollo';
 
 import SongList from './components/SongList';
 import SongCreate from './components/SongCreate';
+import SongDetail from './components/SongDetail';
 
 import './style/style.css';
 
@@ -20,7 +21,7 @@ const Root = () => {
       <Router>
         <nav>
           <div className='container nav-wrapper'>
-            <ul id='nav-mobile' className='left hide-on-med-and-down'>
+            <ul id='nav-mobile' className='left'>
               <li>
                 <Link to='/'>Home</Link>
               </li>
@@ -33,6 +34,7 @@ const Root = () => {
         <Switch>
           <Route exact path='/' component={SongList} />
           <Route path='/songs/new' component={SongCreate} />
+          <Route path='/song/:id' component={SongDetail} />
         </Switch>
       </Router>
     </ApolloProvider>
